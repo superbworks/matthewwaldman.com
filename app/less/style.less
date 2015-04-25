@@ -1,0 +1,96 @@
+@import "common/normalize.less";
+@import "common/mixings.less";
+
+.font('fugueregular', '../font/fugueregular');
+@fugueregular: fugueregular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+.font('gthaptik', '../font/gthaptik');
+@gthaptik: gthaptik, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+@grid: 					20px;
+
+@accent-font-family: 	@fugueregular;
+@base-font-family: 		@gthaptik;
+@base-line-height:      1.6;
+
+@base-font-size:        18px;
+@medium-font-size:      25px;
+
+@medium:     			~"only screen and (min-width : 415px) and (min-height: 415px)";
+
+html, body {height: 100%;}
+
+body {
+	font: @base-font-size @base-font-family;
+	line-height: @base-line-height;
+	color: #fff;
+
+	@media @medium {
+		font-size: @medium-font-size;
+	}
+
+	.transition(background, 5s);
+	&.theme-1 { background: #FC4482; }
+	&.theme-2 { background: #34DD17; }
+	&.theme-3 { background: #0C8EEF; }
+}
+
+a {
+	-webkit-tap-highlight-color: transparent;
+
+	&:link, &:visited {
+		color: #fff;
+		text-decoration: underline;
+	}
+
+	&:hover, a:focus {
+		text-decoration: none;
+	}
+}
+
+section, footer {
+	margin: @grid 0 3*@grid @grid;
+
+	@media @medium {
+		margin: 2*@grid 0 0 2*@grid;
+	}
+}
+
+h1 {
+	font:normal normal 4em @accent-font-family;
+	line-height: 1.2;
+	margin: 0 0 0.4em;
+}
+
+p, ul {
+	@media @medium {
+		margin-left: 440px;
+	}
+}
+
+ul {
+	list-style: none;
+
+	@media @medium {
+		margin-top: -100px;
+	}
+}
+
+header {
+	top: @grid;
+
+	@media @medium {
+		top: 3*@grid;
+	}
+}
+
+footer {
+	padding-bottom: @grid;
+
+	@media @medium {
+		padding: 3*@grid @grid;
+		font-size: 0.56em;
+	}
+}
+
+
