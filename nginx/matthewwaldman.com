@@ -1,4 +1,10 @@
 server {
+  listen       80;
+  server_name  www.matthewwaldman.com;
+  return       301 $scheme://matthewwaldman.com$request_uri;
+}
+
+server {
   client_max_body_size 10M;
   listen 80;
   server_name matthewwaldman.com 45.55.235.136;
